@@ -1,0 +1,1 @@
+double navBarIconSize=30;
