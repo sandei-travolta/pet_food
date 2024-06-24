@@ -1,8 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pet_food/src/screens/widgets/home_page_texts.dart';
 import 'package:pet_food/utils/colors.dart';
+import 'package:pet_food/utils/const.dart';
 import 'package:pet_food/utils/specials_banner_images.dart';
+import 'package:pet_food/src/models/icon.dart'as CustomIcon;
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -226,17 +229,32 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              itemCount: 4,
+                              itemCount: categoriesIconList.length,
                               itemBuilder: (context,index){
+                                CustomIcon.Icons customIcon=categoriesIconList[index];
                             return Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: Container(
-                                height: 80,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.grey.withOpacity(0.4)
-                                ),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 80,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.grey.withOpacity(0.4)
+                                    ),
+                                    child: Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(20.0),
+                                        child: SvgPicture.asset(customIcon.img,color: primayColor,),
+                                      ),
+                                    ),
+                                  ),
+                                  Text(customIcon.name,style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600
+                                  ),)
+                                ],
                               ),
                             );
                           }),
