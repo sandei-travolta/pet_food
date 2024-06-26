@@ -5,6 +5,6 @@ class Product{
   final List<String> sizes;
   final double rating;
   final int price;
-
-  Product({required this.tittle, required this.location, required this.categoy, required this.sizes, required this.rating, required this.price});
+  final String img;
+  Product({required this.tittle, required this.location, required this.categoy, required this.sizes, required this.rating, required this.price,required this.img});
 }

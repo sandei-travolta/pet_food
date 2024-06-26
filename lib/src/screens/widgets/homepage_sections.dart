@@ -1,4 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../utils/colors.dart';
@@ -15,19 +18,106 @@ class BestSellersSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 600,
       child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                subHeadersText("Best Seller Products"),
-                navigationText()
-              ],
+            child: Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  subHeadersText("Best Seller Products"),
+                  navigationText()
+                ],
+              ),
             ),
           ),
+          Expanded(
+            child: GridView.builder(
+              itemCount: 4,
+                gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+                  childAspectRatio: 0.7,
+                  crossAxisSpacing: 1,
+                  mainAxisSpacing: 1
+            ),
+                itemBuilder: (context,index){
+                  return Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(12)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Expanded(
+                              flex:3,
+                              child: Container(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12),
+                                      child: Image.asset("resources/images/bannerImage1.jpg",fit: BoxFit.fill,)),
+                                ),
+                          )),
+                          Expanded(
+                              flex: 1,
+                              child: Container(
+                                padding: EdgeInsets.all(8.0),
+                            color: Colors.white.withOpacity(0.6),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text("Dog Food",style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w700
+                                        ),),
+                                        Row(
+                                          children: [
+                                            Icon(Icons.star,color: Colors.yellow,),
+                                            Text("4.9",style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w600
+                                            ),),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(Icons.location_on,color: Colors.brown,size: 15,),
+                                            Text("Nyeri",style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w700
+                                            ),),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text("400",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700),),
+                                            Text(" Ksh",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400),)
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                          ))
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+          )
         ],
       ),
     );
@@ -42,7 +132,7 @@ class CategorySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
+      height: 160,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -107,7 +197,7 @@ class OffersSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 280,
+      height: 250,
       padding: EdgeInsets.all(8.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
