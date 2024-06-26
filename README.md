@@ -12,4 +12,4 @@ An ecommerce app for Pet food
 
 | Home Page |  |  
 |---------|---------|
-| <img src="https://github.com/sandei-travolta/planet_saver/blob/master/screenshots/IMG-20240616-WA0005.jpg" width="200"> | <img src="https://github.com/sandei-travolta/planet_saver/blob/master/screenshots/IMG-20240616-WA0009.jpg" width="200"> |
+| <img src="https://github.com/sandei-travolta/pet_food/blob/master/screenshots/WhatsApp%20Image%202024-06-26%20at%2016.16.37_438765d2.jpg" width="200"> | <img src="https://github.com/sandei-travolta/planet_saver/blob/master/screenshots/IMG-20240616-WA0009.jpg" width="200"> |
