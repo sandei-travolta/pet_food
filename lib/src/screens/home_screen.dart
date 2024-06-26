@@ -4,6 +4,7 @@ import 'package:pet_food/src/screens/favourites_page.dart';
 import 'package:pet_food/src/screens/home_page.dart';
 import 'package:pet_food/src/screens/message_page.dart';
 import 'package:pet_food/src/screens/profile_page.dart';
+import 'package:pet_food/utils/colors.dart';
 
 import '../../utils/const.dart';
 class HomeScreen extends StatelessWidget {
@@ -36,17 +37,27 @@ class HomeScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height*0.09,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Colors.white
+                    borderRadius: BorderRadius.circular(100),
+                    color: Colors.black.withOpacity(0.9)
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Icon(Icons.home_filled,size: navBarIconSize,),
-                      Icon(Icons.shopping_basket_outlined,size: navBarIconSize,),
-                      Icon(Icons.favorite_border,size: navBarIconSize,),
-                      Icon(Icons.messenger_outline,size: navBarIconSize,),
-                      Icon(Icons.person_2_outlined,size: navBarIconSize,)
+                      Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(Icons.home_filled,size: navBarIconSize,color: primayColor
+
+                              ,),
+                          )),
+                      Icon(Icons.shopping_basket_outlined,size: navBarIconSize,color: Colors.white,),
+                      Icon(Icons.favorite_border,size: navBarIconSize,color: Colors.white,),
+                      Icon(Icons.messenger_outline,size: navBarIconSize,color: Colors.white,),
+                      Icon(Icons.person_2_outlined,size: navBarIconSize,color: Colors.white,)
                     ],
                   ),
                 ),
