@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pet_food/src/screens/description_page.dart';
 
 import '../../../utils/colors.dart';
 import 'home_page_texts.dart';
@@ -45,74 +46,77 @@ class BestSellersSection extends StatelessWidget {
                 itemBuilder: (context,index){
                   return Padding(
                     padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 80,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.3),
-                        borderRadius: BorderRadius.circular(12)
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Expanded(
-                              flex:3,
-                              child: Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(20.0),
-                                  child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(12),
-                                      child: Image.asset("resources/images/bannerImage1.jpg",fit: BoxFit.fill,)),
-                                ),
-                          )),
-                          Expanded(
-                              flex: 1,
-                              child: Container(
-                                padding: EdgeInsets.all(8.0),
-                            color: Colors.white.withOpacity(0.6),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text("Dog Food",style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w700
-                                        ),),
-                                        Row(
-                                          children: [
-                                            Icon(Icons.star,color: Colors.yellow,),
-                                            Text("4.9",style: TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w600
-                                            ),),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Icon(Icons.location_on,color: Colors.brown,size: 15,),
-                                            Text("Nyeri",style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w700
-                                            ),),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            Text("400",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700),),
-                                            Text(" Ksh",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400),)
-                                          ],
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                          ))
-                        ],
+                    child: InkWell(
+                      onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>DescriptionPage())),
+                      child: Container(
+                        height: 80,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.3),
+                          borderRadius: BorderRadius.circular(12)
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Expanded(
+                                flex:3,
+                                child: Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(12),
+                                        child: Image.asset("resources/images/bannerImage1.jpg",fit: BoxFit.fill,)),
+                                  ),
+                            )),
+                            Expanded(
+                                flex: 1,
+                                child: Container(
+                                  padding: EdgeInsets.all(8.0),
+                              color: Colors.white.withOpacity(0.6),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text("Dog Food",style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w700
+                                          ),),
+                                          Row(
+                                            children: [
+                                              Icon(Icons.star,color: Colors.yellow,),
+                                              Text("4.9",style: TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w600
+                                              ),),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.location_on,color: Colors.brown,size: 15,),
+                                              Text("Nyeri",style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w700
+                                              ),),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Text("400",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700),),
+                                              Text(" Ksh",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w400),)
+                                            ],
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                            ))
+                          ],
+                        ),
                       ),
                     ),
                   );
