@@ -208,10 +208,7 @@ class DescriptionPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Text("Select Size",style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600
-                ),),
+                text_headers("Select Size"),
                 Container(
                   height: 50,
                   child: ListView.builder(
@@ -236,13 +233,67 @@ class DescriptionPage extends StatelessWidget {
                           ),
                         );
                       }),
-                )
+                ),
+                text_headers("Product Desciption"),
+                Container(
+                  padding: EdgeInsets.all(5.0),
+                  child: Text(
+                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque molestias ipsa vero sequi doloribus suscipit omnis quibusdam, cum deserunt deleniti consequuntur impedit aperiam officiis eius assumenda rem? Nobis, doloremque aliquid.",
+                    style: TextStyle(
+                      fontSize: 15
+                    ),
+                  ),
+                ),
+                text_headers("Comments"),
+                Container(
+                  width: double.maxFinite,
+                  height: 400,
+                  child: ListView.builder(
+                      itemCount: 5,
+                      itemBuilder: (context,index){
+                    return ListTile(
+                      leading: Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.grey
+                        ),
+                      ),
+                      title: Text("Mark John",style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600
+                      ),),
+                      subtitle: Text("Awesome Product"),
+                      trailing: Container(
+                        width: 50,
+                        child: Row(
+                          children: [
+                            Icon(Icons.star,color: Colors.yellow,),
+                            Text("5")
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const SizedBox(height: 30,),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  Text text_headers(String text) {
+    return Text(text,style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600
+              ),);
   }
 
   Container userSectionIcons(IconData icon) {
